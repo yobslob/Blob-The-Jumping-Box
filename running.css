@@ -1,0 +1,105 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  background-color: #87ceeb;
+}
+
+.game-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.character {
+  position: absolute;
+  bottom: 0;
+  left: 50px;
+  width: 50px;
+  height: 100px;
+  background-color: rgb(19, 19, 18);
+}
+
+.land {
+  position: absolute;
+  bottom: 0;
+  width: 200%;
+  height: 50px;
+  background-color: rgb(45, 147, 22);
+  animation: move-land 1s linear infinite;
+}
+
+.obstacle {
+  position: absolute;
+  bottom: 50px;
+}
+
+.tree {
+  width: 20px;
+  background-color: rgb(0, 103, 0);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.rock {
+  background-color: rgb(102, 101, 101);
+}
+
+.jump {
+  animation: jump-animation 0.8s ease-out;
+}
+
+#score {
+  position: absolute;
+  top: 42%;
+  right: 20px;
+  font-size: 18px;
+}
+
+#highScore {
+  position: absolute;
+  top: 42%;
+  right: 96px;
+  font-size: 18px;
+}
+
+@keyframes move-land {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes jump-animation {
+  0% {
+    bottom: 0;
+  }
+  30% {
+    bottom: 250px;
+  }
+  70% {
+    bottom: 250px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+#jumpButton {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+#restartButton {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  display: none;
+}
